@@ -40,8 +40,7 @@ app.listen(port, () => {
 // Import Trip model
 const Trip = require('./models/trip');
 const User = require('./models/user');
-const {Messages} = require('openai/resources/beta/threads/messages.mjs');
-const {relativeTimeRounding} = require('moment');
+ const {relativeTimeRounding} = require('moment');
 
 // Route: Create a new trip
 app.post('/trip', async (req, res) => {
