@@ -456,17 +456,18 @@ app.post('/sendInviteEmail', async (req, res) => {
 
   // Construct the email content
   const emailContent = `
-    <h3>Hello,</h3>
-    <p>${senderName} has invited you to join their trip "<strong>${tripName}</strong>".</p>
-    <p>Click the button below to join the trip:</p>
-    <a href="http://192.168.0.177:8000/joinTrip?tripId=${tripId}&email=${email}" 
-      style="background-color: #4B61D1; color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px;">
-      Join Trip
-    </a>
-    <p>If the button doesn't work, copy and paste this link into your browser:</p>
-    <p>http://192.168.0.177:8000/joinTrip?tripId=${tripId}&email=${email}</p>
-    <p>Best regards,</p>
-    <p>Wanderlog team</p>
+   <h3>Hello,</h3>
+<p>You have been invited by <strong>${senderName}</strong> to join their trip titled "<strong>${tripName}</strong>".</p>
+<p>To join the trip, please click the button below:</p>
+<a href="https://beneficial-purpose-production-1940.up.railway.app/joinTrip?tripId=${tripId}&email=${email}" 
+   style="background-color: #4B61D1; color: white; padding: 12px 25px; text-decoration: none; font-size: 16px; border-radius: 5px;">
+   Join Trip
+</a>
+<p>If the button doesn't work, please copy and paste the following link into your browser:</p>
+<p><a href="https://beneficial-purpose-production-1940.up.railway.app/joinTrip?tripId=${tripId}&email=${email}" style="color: #4B61D1;">https://beneficial-purpose-production-1940.up.railway.app/joinTrip?tripId=${tripId}&email=${email}</a></p>
+<p>Best regards,</p>
+<p>The Nomad Traveler Team</p>
+
   `;
 
   // Send email using nodemailer
